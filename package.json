@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines" : {
+    "node": "8.10.0",
+    "npm": "3.5.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm run serve --prefix client",
+    "client-install": "npm install --prefix client",
+    "servet-install": "npm install --prefix server",
   	"api": "npm run dev --prefix server",
-    "start": "concurrently \"npm run api\" \"npm run client\""
+    "start": "concurrently \"npm run api\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run client-install && npm run servet-install && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
