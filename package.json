@@ -14,12 +14,12 @@
     "server-install": "npm install --prefix server",
   	"api": "npm run dev --prefix server",
     "start": "concurrently \"npm run api\" \"npm run client\"",
-    "heroku-postbuild": "npm run client-install"
+    "heroku-postbuild": "cd server && npm install && cd ../client && npm install && npm run client"
   },
   "keywords": [
     "example",
     "heroku"
-  ]
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
