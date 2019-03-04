@@ -14,7 +14,7 @@
     "server-install": "npm install --prefix server",
   	"api": "npm run dev --prefix server",
     "start": "concurrently \"npm run api\" \"npm run client\"",
-    "heroku-postbuild": "cd server && npm install && cd ../client && npm install && npm run client"
+    "heroku-postbuild": "cd server && npm install"
   },
   "keywords": [
     "example",
